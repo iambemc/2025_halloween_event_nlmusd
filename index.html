@@ -7,48 +7,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Creepster&display=swap" rel="stylesheet">
-    <!-- Favicon using an emoji for simplicity -->
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Inter:wght@400;600;700&family=Creepster&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎃</text></svg>">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; /* bg-gray-900 */
-            /* Subtle background pattern */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239CA3AF' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #111827;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%239CA3AF' fill-opacity='0.04'%3E%3Ctext x='10' y='40' font-size='30'%3E👻%3C/text%3E%3Ctext x='100' y='60' font-size='30'%3E📚%3C/text%3E%3Ctext x='160' y='20' font-size='30'%3E🍎%3C/text%3E%3Ctext x='40' y='130' font-size='30'%3E🧪%3C/text%3E%3Ctext x='130' y='180' font-size='30'%3E🕷️%3C/text%3E%3Ctext x='70' y='100' font-size='30'%3E🚌%3C/text%3E%3C/g%3E%3C/svg%3E");
         }
-        .creepster {
-            font-family: 'Creepster', cursive;
-        }
-        /* Style for form validation */
-        .invalid-field {
-            border-color: #ef4444; /* red-500 */
-            box-shadow: 0 0 0 2px #fecaca; /* red-200 */
-        }
-        .error-message {
-            color: #ef4444;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
-
-        /* Animation for sections */
+        .creepster { font-family: 'Creepster', cursive; }
+        h2 { font-family: 'Gochi Hand', cursive; letter-spacing: 1.5px; }
+        .invalid-field { border-color: #ef4444; box-shadow: 0 0 0 2px #fecaca; }
+        .error-message { color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem; }
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .animated { opacity: 0; }
+        .hero-bg {
+            background-image: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 25%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="100" fill="rgba(255,255,255,0.05)">👻</text></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" fill="rgba(255,255,255,0.05)">🎃</text></svg>');
+            background-repeat: no-repeat;
+            background-position: 50% 20%, 10% 50%, 90% 60%;
         }
-        /* This class will be added by JS to trigger the animation */
-        .animated {
-            opacity: 0; /* Start hidden */
-        }
+        .faq-item { transition: transform 0.2s ease-in-out; }
+        .faq-item:hover { transform: scale(1.03) !important; }
+        .faq-item:nth-child(odd) { transform: rotate(-1.5deg); }
+        .faq-item:nth-child(even) { transform: rotate(1.5deg); }
+        .activity-card:hover { animation: bounce 0.6s; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-20px);} 60% {transform: translateY(-10px);} }
+        /* Poll styling */
+        .poll-option { cursor: pointer; transition: background-color 0.2s; }
+        .poll-option:hover { background-color: #374151; }
+        .poll-result-bar { transition: width 0.5s ease-in-out; }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -56,79 +47,179 @@
     <!-- Header & Navigation -->
     <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#home" class="text-2xl creepster text-orange-500 tracking-wider">Lampton Spooktacular</a>
+            <a href="#home" class="text-2xl creepster text-amber-400 tracking-wider">Lampton Spooktacular</a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#home" class="hover:text-orange-400 transition-colors">Home</a>
-                <a href="#details" class="hover:text-orange-400 transition-colors">Event Details</a>
-                <a href="#inspiration" class="hover:text-orange-400 transition-colors">Inspiration</a>
+                <a href="#details" class="hover:text-orange-400 transition-colors">Details</a>
+                <a href="#funzone" class="hover:text-orange-400 transition-colors">Fun Zone</a>
+                <a href="#memories" class="hover:text-orange-400 transition-colors">Memories</a>
+                <a href="#vote" class="hover:text-orange-400 transition-colors">Vote</a>
                 <a href="#contest" class="hover:text-orange-400 transition-colors">Contest</a>
-                <a href="#donate" class="hover:text-orange-400 transition-colors">Donate</a>
+                <a href="#safety" class="hover:text-orange-400 transition-colors">Safety</a>
                 <a href="#faq" class="hover:text-orange-400 transition-colors">FAQ</a>
-                <a href="#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+                <a href="#donate" class="text-amber-400 font-bold hover:text-amber-300 transition-colors">Donate</a>
+                <a href="#volunteer" class="hover:text-lime-400 transition-colors">Volunteer</a>
+                <a href="#signup" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                    Sign Up
+                </a>
             </div>
-            <a href="#signup" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">
-                Sign Up Your Trunk
-            </a>
-             <!-- Mobile Menu Button can be added here if needed -->
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative text-center py-20 md:py-32 px-6 bg-gray-800 overflow-hidden">
-             <!-- Decorative background elements -->
-            <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 text-gray-700/50 text-9xl">🎃</div>
-            <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 text-gray-700/50 text-9xl">👻</div>
-            <div class="absolute top-1/2 left-1/4 -translate-y-1/2 text-gray-700/50 text-7xl">🕸️</div>
-
+        <section id="home" class="relative text-center py-20 md:py-32 px-6 bg-gray-800 hero-bg overflow-hidden">
+             <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 text-gray-700/50 text-9xl">🕸️</div>
+            <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 text-gray-700/50 text-9xl">🦇</div>
             <div class="relative z-10 container mx-auto">
-                <img src="https://images.unsplash.com/photo-1603236312406-b043b3531649?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Family in costumes at a decorated car trunk for trunk-or-treat" class="mx-auto mb-6 rounded-full border-4 border-orange-500 shadow-xl h-[150px] w-[150px] object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/1F2937/F97316?text=🎃';">
-                <h1 class="text-5xl md:text-7xl font-bold creepster text-orange-500 tracking-wider">Lampton Elementary Trunk-or-Treat</h1>
-                <p class="text-lg md:text-xl mt-4 text-gray-300">Join us for a safe and fun-filled Halloween night!</p>
+                <img src="https://placehold.co/150x150/1F2937/FBBF24?text=🎃👻🦇" alt="Icon of a jack-o-lantern, ghost, and bat" class="mx-auto mb-6 rounded-full border-4 border-amber-400 shadow-xl h-[150px] w-[150px] object-cover">
+                <h1 class="text-6xl md:text-8xl font-bold creepster tracking-wider uppercase"><span class="text-amber-400">Trunk</span> <span class="text-white text-4xl md:text-6xl">or</span> <span class="text-orange-400">Treat</span></h1>
+                <p class="text-lg md:text-xl mt-4 text-gray-300">Join the Lampton Elementary ghouls for a spooktacular night!</p>
 
-                <!-- Event Date, Time, and Location -->
-                <div class="mt-8 bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl inline-block border border-gray-700">
-                    <h2 class="text-2xl font-bold text-white">Saturday, October 25, 2025</h2>
-                    <p class="text-lg text-gray-300 mt-1">4:00 PM - 7:00 PM</p>
+                <div class="mt-8 bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl inline-block border-2 border-dashed border-gray-600">
+                    <h2 class="text-3xl font-bold text-white !font-gochi-hand">Friday, October 31, 2025</h2>
+                    <p class="text-lg text-gray-300 mt-1">3:30 PM - 6:00 PM</p>
                     <p class="text-lg text-gray-400 mt-2 font-semibold">Lampton Elementary School Parking Lot</p>
                 </div>
 
-                <!-- Prominent Call to Action for Donations -->
-                <div class="mt-10">
-                    <a href="#donate" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105 shadow-lg">
-                        Help! We Need Candy!
+                <div class="mt-8 flex justify-center items-center gap-4">
+                    <a href="#donate" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-4 px-8 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 text-xl animate-pulse">
+                        🍬 Help Us! Donate Candy 🍬
                     </a>
+                </div>
+
+                <div id="countdown" class="mt-8 text-white">
+                    <div class="text-3xl md:text-4xl creepster tracking-widest" id="countdown-container">
+                        <span id="days">00</span> Days <span id="hours">00</span> Hours <span id="minutes">00</span> Mins <span id="seconds">00</span> Secs
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Event Details Section -->
-        <section id="details" class="animated py-16 md:py-24 bg-gray-900 px-6">
+        <!-- Candy Donation Section -->
+        <section id="donate" class="py-16 md:py-24 bg-amber-900/30 px-6">
             <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-4xl font-bold creepster text-orange-500 mb-6">About The Event</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    Our annual Trunk-or-Treat provides a safe and exciting environment for children and families to enjoy Halloween. Lampton families and staff decorate their vehicle trunks and hand out candy as kids "trick-or-treat" from car to car. It's a fantastic evening of creative decorations, costumes, and school spirit. Come see the amazing displays and collect some sweet treats!
+                <h2 class="text-5xl font-bold creepster text-amber-400 mb-4">Feed the Monsters!</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                    We need your help collecting bags of individually wrapped candy. Dropping off donations is part of the fun!
                 </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-gray-800 p-8 rounded-lg border-2 border-dashed border-gray-700 hover:border-amber-500 hover:shadow-lg transition-all duration-300 text-center">
+                        <div class="text-6xl mb-4">🍬</div>
+                        <h3 class="text-2xl font-bold text-white">Drop Candy in the Monster Mouths!</h3>
+                        <p class="text-gray-400 mt-2">Find our Monster Mouth donation bins at <span class="font-semibold text-white">all school gates</span> during school hours.</p>
+                        <p class="mt-4 text-orange-400 font-bold">Donations accepted until Wednesday, October 29, 2025.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Inspiration Gallery Section -->
-        <section id="inspiration" class="animated py-16 md:py-24 bg-gray-800 px-6">
+        <!-- Event Details Section - Animation class removed for immediate visibility -->
+        <section id="details" class="py-16 md:py-24 bg-gray-900 px-6">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-5xl font-bold text-orange-500 mb-6 flex items-center justify-center gap-4">
+                    <svg class="w-12 h-12 text-orange-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-12h4v2h-4zm0 4h4v2h-4zm0 4h4v2h-4z"/></svg>
+                    Get Ready for Ghoulish Games & Goodies!
+                </h2>
+                <p class="text-gray-300 leading-relaxed mb-12">
+                    Our annual Trunk-or-Treat is a full evening of Halloween fun! Lampton families and staff decorate their vehicle trunks and hand out candy as kids "trick-or-treat" from car to car. Beyond the trunks, enjoy creative crafts, delicious food, and a fantastic community atmosphere.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="activity-card bg-gray-800 p-6 rounded-lg border-2 border-dashed border-gray-700 hover:border-orange-500 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.5)]">
+                        <div class="text-5xl mb-3">🚗</div>
+                        <h3 class="text-xl font-bold">Creative Trunks</h3>
+                        <p class="text-gray-400 mt-2">Trick-or-treat from dozens of spookily decorated car trunks.</p>
+                    </div>
+                    <div class="activity-card bg-gray-800 p-6 rounded-lg border-2 border-dashed border-gray-700 hover:border-purple-500 transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                        <div class="text-5xl mb-3">🎨</div>
+                        <h3 class="text-xl font-bold">Arts & Crafts</h3>
+                        <p class="text-gray-400 mt-2">Get creative at our Halloween-themed arts and crafts table.</p>
+                    </div>
+                    <div class="activity-card bg-gray-800 p-6 rounded-lg border-2 border-dashed border-gray-700 hover:border-orange-500 transition-all duration-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.5)]">
+                         <div class="text-5xl mb-3">🍔</div>
+                        <h3 class="text-xl font-bold">Food Vendors</h3>
+                        <p class="text-gray-400 mt-2">Enjoy delicious treats and snacks from local food vendors.</p>
+                    </div>
+                    <div class="activity-card bg-gray-800 p-6 rounded-lg border-2 border-dashed border-gray-700 hover:border-green-500 transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)]">
+                         <div class="text-5xl mb-3">🎶</div>
+                        <h3 class="text-xl font-bold">Live Music</h3>
+                        <p class="text-gray-400 mt-2">Enjoy spooky tunes and a fun atmosphere with our DJ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spooky Fun Zone - Animation class removed for immediate visibility -->
+        <section id="funzone" class="py-16 md:py-24 bg-lime-900/50 px-6">
+             <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-5xl font-bold text-lime-400 mb-8">👻 Spooky Fun Zone! 👻</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-gray-800 p-6 rounded-lg border-2 border-dashed border-lime-500 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-4 text-center">Giggle like a Ghoul!</h3>
+                            <div id="joke-container" class="min-h-[120px]">
+                                <p class="text-gray-300 mb-2 text-lg"><strong>Q:</strong> <span id="joke-question"></span></p>
+                                <p id="joke-answer-container" class="text-lime-300 text-lg hidden"><strong>A:</strong> <span id="joke-answer"></span></p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <button id="show-answer-btn" class="w-full bg-lime-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">Show Answer</button>
+                            <button id="next-joke-btn" class="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">Next Joke</button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg border-2 border-dashed border-purple-500 flex flex-col justify-center items-center">
+                        <div class="text-5xl mb-4">🖍️</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Halloween Coloring Fun!</h3>
+                        <p class="text-gray-300 mb-4">Click the button for some free online coloring pages!</p>
+                        <a href="https://www.thecolor.com/Category/Coloring/Halloween.aspx" target="_blank" rel="noopener noreferrer" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                            Start Coloring!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memories Gallery - Animation class removed for immediate visibility -->
+        <section id="memories" class="py-16 md:py-24 bg-gray-800 px-6">
             <div class="container mx-auto max-w-5xl text-center">
-                <h2 class="text-4xl font-bold creepster text-orange-500 mb-4">Trunk-or-Treat Ideas!</h2>
-                <p class="text-gray-400 mb-10">Need some inspiration? Check out these spooky setups!</p>
+                <h2 class="text-5xl font-bold text-purple-400 mb-4">Flashback to Last Year's Frights!</h2>
+                <p class="text-gray-400 mb-10">Check out the amazing fun from our last Trunk-or-Treat!</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/1F2937/F97316?text=Monster+Mouth" alt="A car trunk decorated to look like a giant monster's mouth" class="w-full h-48 object-cover">
-                        <div class="p-4"><h3 class="font-bold">Monster Mouth</h3></div>
+                    <div class="bg-gray-700 rounded-lg p-3 shadow-xl transform hover:scale-105 rotate-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/F472B6/FFFFFF?text=Awesome+Costumes!" alt="Kids in creative Halloween costumes" class="w-full h-48 object-cover rounded">
+                        <p class="mt-2 font-gochi-hand text-xl">Awesome Costumes!</p>
                     </div>
-                     <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/1F2937/F97316?text=Haunted+Graveyard" alt="A car trunk decorated like a spooky haunted graveyard" class="w-full h-48 object-cover">
-                        <div class="p-4"><h3 class="font-bold">Haunted Graveyard</h3></div>
+                     <div class="bg-gray-700 rounded-lg p-3 shadow-xl transform hover:scale-105 -rotate-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/34D399/FFFFFF?text=Creative+Trunks!" alt="A car trunk decorated with a spooky theme" class="w-full h-48 object-cover rounded">
+                        <p class="mt-2 font-gochi-hand text-xl">So Many Creative Trunks!</p>
                     </div>
-                     <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/1F2937/F97316?text=Candy+Land" alt="A car trunk decorated with bright colors and giant candy props" class="w-full h-48 object-cover">
-                        <div class="p-4"><h3 class="font-bold">Candy Land Theme</h3></div>
+                     <div class="bg-gray-700 rounded-lg p-3 shadow-xl transform hover:scale-105 rotate-1 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=Family+Fun!" alt="Families smiling and enjoying the event" class="w-full h-48 object-cover rounded">
+                        <p class="mt-2 font-gochi-hand text-xl">Smiles and Family Fun!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interactive Poll Section -->
+        <section id="vote" class="animated py-16 md:py-24 bg-gray-900 px-6">
+            <div class="container mx-auto max-w-2xl text-center">
+                <h2 class="text-5xl font-bold text-orange-400 mb-4">Suggest Next Year's Theme!</h2>
+                <div class="mb-10 bg-amber-500/20 border-2 border-dashed border-amber-500 p-4 rounded-lg inline-block">
+                    <p class="text-xl font-bold text-amber-400">This Year's Winning Theme is...</p>
+                    <p class="text-4xl creepster tracking-wider">???</p>
+                </div>
+                <p class="text-gray-400 mb-8">Have a great idea for our next Trunk-or-Treat? Enter it below! We'll announce the winning theme for next year's event after the votes are counted!</p>
+                <div id="suggestion-container" class="bg-gray-800 p-8 rounded-lg border-2 border-dashed border-gray-700">
+                    <form id="theme-form" action="https://formsubmit.co/lamptonpta1@gmail.com" method="POST">
+                        <label for="theme-input" class="sr-only">Theme Suggestion</label>
+                        <input type="text" id="theme-input" name="theme-suggestion" class="w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white text-lg" placeholder="Enter your spooky theme idea...">
+                        <button type="submit" class="mt-4 w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                            Submit My Idea!
+                        </button>
+                    </form>
+                    <div id="suggestion-thanks" class="hidden">
+                        <h3 class="text-3xl font-bold text-orange-400">Thanks for the spooky suggestion!</h3>
+                        <p class="mt-4 text-gray-300">We've added your idea to the cauldron. Good luck!</p>
                     </div>
                 </div>
             </div>
@@ -137,17 +228,17 @@
         <!-- Costume Contest Section -->
         <section id="contest" class="animated py-16 md:py-24 bg-gray-900 px-6">
             <div class="container mx-auto max-w-4xl text-center">
-                 <h2 class="text-4xl font-bold creepster text-orange-500 mb-4">Costume Contest!</h2>
-                <p class="text-gray-400 mb-10">Wear your best costume for a chance to win a spooky prize!</p>
+                 <h2 class="text-5xl font-bold text-amber-400 mb-4">Costume & Trunk Contest!</h2>
+                <p class="text-gray-400 mb-10">Prizes for best costume AND best decorated trunk!</p>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-                    <div class="bg-gray-800 border border-purple-500 p-6 rounded-lg text-center shadow-lg">
+                    <div class="bg-gray-800 border-2 border-dashed border-purple-500 p-6 rounded-lg text-center shadow-lg transform -rotate-2">
                         <div class="text-purple-400 mb-3">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-bold">Judging at 6 PM</h3>
+                        <h3 class="text-2xl font-bold">Judging at 5:30 PM</h3>
                         <p class="text-gray-400">Be near the main stage!</p>
                     </div>
-                    <div class="bg-gray-800 border border-orange-500 p-6 rounded-lg text-center shadow-lg">
+                    <div class="bg-gray-800 border-2 border-dashed border-orange-500 p-6 rounded-lg text-center shadow-lg transform rotate-2">
                         <div class="text-orange-400 mb-3">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m5 4v4m-2-2h4M17 3h4m-4 5v4m-2-2h4M3 17h4m-4 5v4m-2-2h4" /></svg>
                         </div>
@@ -157,15 +248,15 @@
                 </div>
             </div>
         </section>
-
-
+        
         <!-- Sign-up Form Section -->
         <section id="signup" class="animated py-16 md:py-24 bg-gray-800 px-6">
             <div class="container mx-auto max-w-lg">
                 <div id="signup-container">
-                    <h2 class="text-4xl font-bold text-center creepster text-orange-500 mb-2">Decorate Your Trunk!</h2>
+                    <h2 class="text-5xl font-bold text-center text-orange-400 mb-2">Decorate Your Trunk!</h2>
                     <p class="text-center text-gray-400 mb-8">Sign up to be a part of the fun. Space is limited!</p>
-                    <form id="signup-form" class="space-y-6" novalidate>
+                    <form id="signup-form" class="space-y-6" novalidate action="https://formsubmit.co/lamptonpta1@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Trunk-or-Treat Trunk Registration!">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
                             <input type="text" id="name" name="name" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
@@ -182,7 +273,7 @@
                              <p id="phone-error" class="error-message hidden">Please enter your phone number.</p>
                         </div>
                         <div>
-                            <label for="vehicle" class="block text-sm font-medium text-gray-300">Vehicle Description (e.g., "Blue Honda SUV")</label>
+                            <label for="vehicle" class="block text-sm font-medium text-gray-300">Vehicle Description</label>
                             <input type="text" id="vehicle" name="vehicle" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
                              <p id="vehicle-error" class="error-message hidden">Please describe your vehicle.</p>
                         </div>
@@ -192,63 +283,133 @@
                     </form>
                 </div>
                 <div id="thank-you-message" class="hidden text-center bg-gray-700 p-8 rounded-lg shadow-xl">
-                    <h3 class="text-3xl font-bold text-orange-500">Thank you!</h3>
-                    <p class="mt-4 text-gray-300">Your registration has been received. You will receive a confirmation email shortly with more event details and setup information. We can't wait to see your spooky trunk!</p>
+                    <h3 class="text-3xl font-bold text-orange-400">Thank you!</h3>
+                    <p class="mt-4 text-gray-300">Your registration has been received. You will get an email with more details soon!</p>
                 </div>
             </div>
         </section>
 
-        <!-- Candy Donation Section -->
-        <section id="donate" class="animated py-16 md:py-24 bg-gray-900 px-6">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-4xl font-bold creepster text-orange-500 mb-4">Candy Donations Needed!</h2>
-                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                    To make this event a success, we need your help! We're collecting bags of individually wrapped candy. Please drop off donations by <span class="font-bold text-orange-400">Wednesday, October 22, 2025.</span>
-                </p>
-                <div class="mt-8 text-left grid md:grid-cols-2 gap-6">
-                    <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-orange-500 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-bold text-white">Lampton Elementary Front Office</h3>
-                        <p class="text-gray-400">12345 E Alondra Blvd, Norwalk, CA 90650</p>
-                        <p class="mt-2 text-gray-300">Hours: 8 AM - 4 PM, School Days</p>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-purple-500 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-bold text-white">NLMUSD District Office</h3>
-                        <p class="text-gray-400">12820 Pioneer Blvd, Norwalk, CA 90650</p>
-                        <p class="mt-2 text-gray-300">Hours: 8 AM - 5 PM, Mon-Fri</p>
-                    </div>
+        <!-- Volunteer Sign-up Section -->
+        <section id="volunteer" class="animated py-16 md:py-24 bg-gray-900 px-6">
+            <div class="container mx-auto max-w-lg">
+                <div id="volunteer-container">
+                    <h2 class="text-5xl font-bold text-center text-lime-400 mb-2">Join the Boo Crew!</h2>
+                    <p class="text-center text-gray-400 mb-8">Want to help make the magic happen? Sign up to be a PTA volunteer!</p>
+                    <form id="volunteer-form" class="space-y-6" novalidate action="https://formsubmit.co/lamptonpta1@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Trunk-or-Treat Volunteer!">
+                        <div>
+                            <label for="volunteer-name" class="block text-sm font-medium text-gray-300">Full Name</label>
+                            <input type="text" id="volunteer-name" name="volunteer_name" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-lime-500 focus:border-lime-500 p-3 text-white">
+                            <p id="volunteer-name-error" class="error-message hidden">Please enter your name.</p>
+                        </div>
+                        <div>
+                            <label for="volunteer-email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                            <input type="email" id="volunteer-email" name="volunteer_email" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-lime-500 focus:border-lime-500 p-3 text-white">
+                            <p id="volunteer-email-error" class="error-message hidden">Please enter a valid email address.</p>
+                        </div>
+                        <div>
+                            <label for="volunteer-phone" class="block text-sm font-medium text-gray-300">Phone Number</label>
+                            <input type="tel" id="volunteer-phone" name="volunteer_phone" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-lime-500 focus:border-lime-500 p-3 text-white">
+                             <p id="volunteer-phone-error" class="error-message hidden">Please enter your phone number.</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300">I can help with:</label>
+                            <div class="mt-2 space-y-2">
+                                <div class="flex items-center">
+                                    <input id="help-setup" name="volunteer_area[]" type="checkbox" value="Set Up" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
+                                    <label for="help-setup" class="ml-3 text-gray-300">Event Set Up</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="help-crafts" name="volunteer_area[]" type="checkbox" value="Arts & Crafts" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
+                                    <label for="help-crafts" class="ml-3 text-gray-300">Arts & Crafts Table</label>
+                                </div>
+                                 <div class="flex items-center">
+                                    <input id="help-cleanup" name="volunteer_area[]" type="checkbox" value="Clean Up" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
+                                    <label for="help-cleanup" class="ml-3 text-gray-300">Event Clean Up</label>
+                                </div>
+                                 <div class="flex items-center">
+                                    <input id="help-anything" name="volunteer_area[]" type="checkbox" value="Anything" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
+                                    <label for="help-anything" class="ml-3 text-gray-300">Anything! I'm flexible!</label>
+                                </div>
+                            </div>
+                             <p id="volunteer-area-error" class="error-message hidden">Please select at least one area to help.</p>
+                        </div>
+                        <button type="submit" class="w-full bg-lime-600 hover:bg-lime-700 text-white font-bold py-3 px-4 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                            Count Me In!
+                        </button>
+                    </form>
+                </div>
+                <div id="volunteer-thank-you" class="hidden text-center bg-gray-700 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-3xl font-bold text-lime-400">You're a lifesaver!</h3>
+                    <p class="mt-4 text-gray-300">Thank you for volunteering! The PTA will be in touch with more details soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spooky & Safe Section -->
+        <section id="safety" class="animated py-16 md:py-24 bg-gray-800 px-6">
+            <div class="container mx-auto max-w-3xl">
+                <h2 class="text-5xl font-bold text-center text-lime-400 mb-10 flex justify-center items-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm-1-7a1 1 0 00-1 1v3a1 1 0 002 0V9a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
+                    Spooky & Safe Rules for Ghouls!
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+                    <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-4"><span class="text-3xl">🤝</span> Stay with your Boo Crew (your family)!</div>
+                    <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-4"><span class="text-3xl">🚶</span> Do the Monster Mash, but please don't dash! (Walk, don't run).</div>
+                    <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-4"><span class="text-3xl">🍬</span> Check all your candy with a grown-up before eating.</div>
+                    <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-4"><span class="text-3xl">😊</span> Say "Trick-or-Treat" and "Thank you!" to be extra sweet.</div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="animated py-16 md:py-24 bg-gray-800 px-6">
+        <section id="faq" class="animated py-16 md:py-24 bg-gray-900 px-6">
             <div class="container mx-auto max-w-3xl">
-                <h2 class="text-4xl font-bold text-center creepster text-orange-500 mb-10">Frequently Asked Questions</h2>
-                <div class="space-y-6">
-                    <div class="bg-gray-700 p-5 rounded-lg">
+                <h2 class="text-5xl font-bold text-center text-orange-400 mb-10">Frequently Asked Questions</h2>
+                <div class="space-y-8">
+                    <div class="faq-item bg-gray-700 p-5 rounded-lg">
                         <h3 class="font-bold text-lg text-white">What happens if it rains?</h3>
-                        <p class="mt-2 text-gray-300">In case of bad weather, our rain date is scheduled for the next day, Sunday, October 26th, at the same time and location. We will notify all registered participants via email.</p>
+                        <p class="mt-2 text-gray-300">This event is rain or shine! In case of heavy rain, we will move into the school's multi-purpose room. We'll keep you updated via email!</p>
                     </div>
-                    <div class="bg-gray-700 p-5 rounded-lg">
-                        <h3 class="font-bold text-lg text-white">How do I enter the costume contest?</h3>
-                        <p class="mt-2 text-gray-300">Entry is automatic! Just be near the main stage at 6:00 PM when our judges are looking for the best costumes. Good luck!</p>
+                    <div class="faq-item bg-gray-700 p-5 rounded-lg">
+                        <h3 class="font-bold text-lg text-white">How do I enter the contests?</h3>
+                        <p class="mt-2 text-gray-300">Entry is automatic! Our secret judges will be roaming the event. Winners will be announced at 5:30 PM on the main stage.</p>
                     </div>
-                    <div class="bg-gray-700 p-5 rounded-lg">
-                        <h3 class="font-bold text-lg text-white">What time should trunk participants arrive to set up?</h3>
-                        <p class="mt-2 text-gray-300">If you are decorating a trunk, please plan to arrive between 2:30 PM and 3:30 PM to get parked and set up. All vehicles must be in place by 3:45 PM for safety.</p>
+                    <div class="faq-item bg-gray-700 p-5 rounded-lg">
+                        <h3 class="font-bold text-lg text-white">What time should trunk participants arrive?</h3>
+                        <p class="mt-2 text-gray-300">Please arrive between 2:30 PM and 3:15 PM to get parked and set up. All vehicles must be in place by 3:15 PM for safety.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="animated py-16 md:py-24 bg-gray-900 px-6 text-center">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold creepster text-orange-500 mb-4">Have Questions?</h2>
+        <section id="contact" class="animated py-16 md:py-24 bg-gray-900 text-center">
+             <div class="container mx-auto">
+                <h2 class="text-5xl font-bold creepster text-amber-400 mb-4">Have Questions?</h2>
                 <p class="text-gray-300 mb-6">We'd love to hear from you!</p>
                 <div class="inline-block bg-gray-800 p-6 rounded-lg border border-gray-700">
-                    <p class="text-lg">Email: <a href="mailto:events@lamptonelementary.org" class="text-orange-400 hover:underline">events@lamptonelementary.org</a></p>
+                    <p class="text-lg">Email: <a href="mailto:lamptonpta1@gmail.com" class="text-orange-400 hover:underline">lamptonpta1@gmail.com</a></p>
                     <p class="text-lg mt-2">Phone: <a href="tel:562-555-5267" class="text-orange-400 hover:underline">(562) 555-5267</a></p>
+                    <p class="text-lg mt-2">Instagram: <a href="https://www.instagram.com/lamptonpta" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">@lamptonpta</a></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Social Share Section -->
+        <section id="share" class="animated py-16 md:py-24 bg-gray-800 px-6 text-center">
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-bold creepster text-amber-400 mb-4">Spread the Spookiness!</h2>
+                <p class="text-gray-300 mb-8">Help us get the word out! Share this page with other Lampton families.</p>
+                <div class="flex justify-center items-center gap-4">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_EVENT_URL_HERE" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>
+                        Share on Facebook
+                    </a>
+                    <a href="https://www.instagram.com/lamptonpta" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 flex items-center gap-2">
+                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
+                        Follow on Instagram
+                    </a>
                 </div>
             </div>
         </section>
@@ -261,65 +422,160 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Form validation logic
-            const form = document.getElementById('signup-form');
-            if (form) {
-                const signupContainer = document.getElementById('signup-container');
-                const thankYouMessage = document.getElementById('thank-you-message');
+            // Countdown Timer Logic
+            const countdownDate = new Date("October 31, 2025 15:30:00").getTime();
+            const daysEl = document.getElementById('days'), hoursEl = document.getElementById('hours'), minutesEl = document.getElementById('minutes'), secondsEl = document.getElementById('seconds');
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown-container').innerHTML = "The Spooktacular is Happening Now!";
+                    return;
+                }
+                const d = Math.floor(distance / (1000 * 60 * 60 * 24)), h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)), s = Math.floor((distance % (1000 * 60)) / 1000);
+                if(daysEl) daysEl.innerText = String(d).padStart(2, '0');
+                if(hoursEl) hoursEl.innerText = String(h).padStart(2, '0');
+                if(minutesEl) minutesEl.innerText = String(m).padStart(2, '0');
+                if(secondsEl) secondsEl.innerText = String(s).padStart(2, '0');
+            }, 1000);
 
-                const fields = {
-                    name: { required: true },
-                    email: { required: true, isEmail: true },
-                    phone: { required: true },
-                    vehicle: { required: true }
-                };
-
-                const validateField = (field) => {
-                    const input = document.getElementById(field);
-                    const errorEl = document.getElementById(`${field}-error`);
-                    let isValid = true;
-
-                    input.classList.remove('invalid-field');
-                    errorEl.classList.add('hidden');
-
-                    const value = input.value.trim();
-                    const config = fields[field];
-
-                    if (config.required && value === '') {
-                        isValid = false;
-                    } else if (config.isEmail && !/^\S+@\S+\.\S+$/.test(value)) {
-                        isValid = false;
-                    }
-                    
-                    if (!isValid) {
-                        input.classList.add('invalid-field');
-                        errorEl.classList.remove('hidden');
-                    }
-                    return isValid;
-                };
-
-                form.addEventListener('submit', (event) => {
-                    event.preventDefault();
-                    let isFormValid = true;
-                    for (const field in fields) {
-                        if (!validateField(field)) {
-                            isFormValid = false;
-                        }
-                    }
-
-                    if (isFormValid) {
-                        signupContainer.classList.add('hidden');
-                        thankYouMessage.classList.remove('hidden');
+            // Theme Suggestion Logic
+            const themeForm = document.getElementById('theme-form');
+            if (themeForm) {
+                themeForm.addEventListener('submit', (e) => {
+                    const themeInput = document.getElementById('theme-input');
+                    if (themeInput.value.trim() === '') {
+                        e.preventDefault(); // Prevent submission if the field is empty
+                    } else {
+                        // Let the form submit via the action attribute
+                        // Then, hide the form and show the thank you message
+                        setTimeout(() => {
+                            document.getElementById('suggestion-thanks').classList.remove('hidden');
+                            themeForm.classList.add('hidden');
+                        }, 100);
                     }
                 });
-
-                for (const field in fields) {
-                    document.getElementById(field).addEventListener('blur', () => validateField(field));
-                }
             }
 
-            // Scroll animation logic
-            const animatedElements = document.querySelectorAll('.animated');
+            // Joke Roller Logic
+            const jokeSection = document.getElementById('funzone');
+            if(jokeSection) {
+                const jokes = [
+                    { q: "Why didn't the skeleton cross the road?", a: "He didn't have the guts!" },
+                    { q: "What do you call a witch's garage?", a: "A broom closet!" },
+                    { q: "What do you get when you drop a pumpkin?", a: "A squash!" },
+                    { q: "Why are ghosts bad liars?", a: "Because you can see right through them!" },
+                    { q: "What is a vampire's favorite fruit?", a: "A neck-tarine!" },
+                    { q: "Where does a vampire keep his money?", a: "In a blood bank!" },
+                    { q: "What do you call a fat jack-o'-lantern?", a: "A plumpkin." }
+                ];
+                let currentJokeIndex = 0;
+                const questionEl = document.getElementById('joke-question');
+                const answerContainerEl = document.getElementById('joke-answer-container');
+                const answerEl = document.getElementById('joke-answer');
+                const showAnswerBtn = document.getElementById('show-answer-btn');
+                const nextJokeBtn = document.getElementById('next-joke-btn');
+                function displayJoke() {
+                    questionEl.textContent = jokes[currentJokeIndex].q;
+                    answerEl.textContent = jokes[currentJokeIndex].a;
+                    answerContainerEl.classList.add('hidden');
+                    showAnswerBtn.classList.remove('hidden');
+                }
+                if(showAnswerBtn) showAnswerBtn.addEventListener('click', () => {
+                    answerContainerEl.classList.remove('hidden');
+                    showAnswerBtn.classList.add('hidden');
+                });
+                if(nextJokeBtn) nextJokeBtn.addEventListener('click', () => {
+                    currentJokeIndex = (currentJokeIndex + 1) % jokes.length;
+                    displayJoke();
+                });
+                displayJoke();
+            }
+            
+            // Shared form validation function
+            const validateField = (input, errorId, validationFn) => {
+                const errorEl = document.getElementById(errorId);
+                if (!validationFn(input.value)) {
+                    input.classList.add('invalid-field');
+                    errorEl.classList.remove('hidden');
+                    return false;
+                } else {
+                    input.classList.remove('invalid-field');
+                    errorEl.classList.add('hidden');
+                    return true;
+                }
+            };
+
+            // Trunk Sign-up Form validation logic
+            const form = document.getElementById('signup-form');
+            if(form){
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const phoneInput = document.getElementById('phone');
+                const vehicleInput = document.getElementById('vehicle');
+                
+                form.addEventListener('submit', (e) => {
+                    const isNameValid = validateField(nameInput, 'name-error', val => val.trim() !== '');
+                    const isEmailValid = validateField(emailInput, 'email-error', val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+                    const isPhoneValid = validateField(phoneInput, 'phone-error', val => val.trim() !== '');
+                    const isVehicleValid = validateField(vehicleInput, 'vehicle-error', val => val.trim() !== '');
+                    
+                    if (!isNameValid || !isEmailValid || !isPhoneValid || !isVehicleValid) {
+                        e.preventDefault();
+                    } else {
+                        // Let form submit via action attribute
+                        // Hide form and show thank you message after a short delay
+                        setTimeout(() => {
+                            document.getElementById('signup-container').classList.add('hidden');
+                            document.getElementById('thank-you-message').classList.remove('hidden');
+                        }, 100);
+                    }
+                });
+            }
+            
+            // Volunteer Form Logic
+            const volunteerForm = document.getElementById('volunteer-form');
+            if (volunteerForm) {
+                const volName = document.getElementById('volunteer-name');
+                const volEmail = document.getElementById('volunteer-email');
+                const volPhone = document.getElementById('volunteer-phone');
+                const volAreas = document.querySelectorAll('input[name="volunteer_area[]"]');
+
+                const validateVolunteerForm = () => {
+                    const isNameValid = validateField(volName, 'volunteer-name-error', val => val.trim() !== '');
+                    const isEmailValid = validateField(volEmail, 'volunteer-email-error', val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+                    const isPhoneValid = validateField(volPhone, 'volunteer-phone-error', val => val.trim() !== '');
+
+                    let isAreaValid = false;
+                    volAreas.forEach(checkbox => {
+                        if (checkbox.checked) isAreaValid = true;
+                    });
+
+                    const areaErrorEl = document.getElementById('volunteer-area-error');
+                    if (!isAreaValid) {
+                        areaErrorEl.classList.remove('hidden');
+                    } else {
+                        areaErrorEl.classList.add('hidden');
+                    }
+
+                    return isNameValid && isEmailValid && isPhoneValid && isAreaValid;
+                };
+
+                volunteerForm.addEventListener('submit', (e) => {
+                    if (!validateVolunteerForm()) {
+                        e.preventDefault();
+                    } else {
+                        setTimeout(() => {
+                            document.getElementById('volunteer-container').classList.add('hidden');
+                            document.getElementById('volunteer-thank-you').classList.remove('hidden');
+                        }, 100);
+                    }
+                });
+            }
+
+            // Animation on scroll
+            const animatedEls = document.querySelectorAll('.animated');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -327,17 +583,10 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            });
-
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
+            }, { threshold: 0.1 });
+            animatedEls.forEach(el => observer.observe(el));
         });
     </script>
-
 </body>
 </html>
-
 
