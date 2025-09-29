@@ -12,10 +12,11 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%239CA3AF' fill-opacity='0.04'%3E%3Ctext x='10' y='40' font-size='30'%3E👻%3C/text%3E%3Ctext x='100' y='60' font-size='30'%3E📚%3C/text%3E%3Ctext x='160' y='20' font-size='30'%3E🍎%3C/text%3E%3Ctext x='40' y='130' font-size='30'%3E🧪%3C/text%3E%3Ctext x='130' y='180' font-size='30'%3E🕷️%3C/text%3E%3Ctext x='70' y='100' font-size='30'%3E🚌%3C/text%3E%3C/g%3E%3C/svg%3E");
+            background-color: #2e1065; /* Deep purple for a spooky Halloween vibe */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23FBBF24' fill-opacity='0.05'%3E%3Ctext x='10' y='40' font-size='30'%3E👻%3C/text%3E%3Ctext x='100' y='60' font-size='30'%3E📚%3C/text%3E%3Ctext x='160' y='20' font-size='30'%3E🍎%3C/text%3E%3Ctext x='40' y='130' font-size='30'%3E🧪%3C/text%3E%3Ctext x='130' y='180' font-size='30'%3E🕷️%3C/text%3E%3Ctext x='70' y='100' font-size='30'%3E🚌%3C/text%3E%3C/g%3E%3C/svg%3E");
         }
         .creepster { font-family: 'Creepster', cursive; }
+        .gochi-hand { font-family: 'Gochi Hand', cursive; }
         h2 { font-family: 'Gochi Hand', cursive; letter-spacing: 1.5px; }
         .invalid-field { border-color: #ef4444; box-shadow: 0 0 0 2px #fecaca; }
         .error-message { color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem; }
@@ -36,30 +37,24 @@
         .faq-item:nth-child(even) { transform: rotate(1.5deg); }
         .activity-card:hover { animation: bounce 0.6s; }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-20px);} 60% {transform: translateY(-10px);} }
-        /* Poll styling */
-        .poll-option { cursor: pointer; transition: background-color 0.2s; }
-        .poll-option:hover { background-color: #374151; }
-        .poll-result-bar { transition: width 0.5s ease-in-out; }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-violet-950 text-white">
 
     <!-- Header & Navigation -->
     <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#home" class="text-2xl creepster text-amber-400 tracking-wider">Lampton Spooktacular</a>
             <div class="hidden md:flex space-x-6 items-center">
+                <a href="#donate" class="text-amber-400 font-bold hover:text-amber-300 transition-colors">Donate Candy</a>
+                <a href="#rsvp" class="hover:text-orange-400 transition-colors">RSVP</a>
+                <a href="#signup" class="hover:text-orange-400 transition-colors">Sign Up</a>
+                <a href="#volunteer" class="hover:text-lime-400 transition-colors">Volunteer</a>
                 <a href="#details" class="hover:text-orange-400 transition-colors">Details</a>
                 <a href="#funzone" class="hover:text-orange-400 transition-colors">Fun Zone</a>
-                <a href="#memories" class="hover:text-orange-400 transition-colors">Memories</a>
-                <a href="#vote" class="hover:text-orange-400 transition-colors">Vote</a>
-                <a href="#contest" class="hover:text-orange-400 transition-colors">Contest</a>
-                <a href="#safety" class="hover:text-orange-400 transition-colors">Safety</a>
                 <a href="#faq" class="hover:text-orange-400 transition-colors">FAQ</a>
-                <a href="#donate" class="text-amber-400 font-bold hover:text-amber-300 transition-colors">Donate</a>
-                <a href="#volunteer" class="hover:text-lime-400 transition-colors">Volunteer</a>
-                <a href="#signup" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">
-                    Sign Up
+                 <a href="#signup" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                    Register Trunk
                 </a>
             </div>
         </nav>
@@ -71,7 +66,12 @@
              <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 text-gray-700/50 text-9xl">🕸️</div>
             <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 text-gray-700/50 text-9xl">🦇</div>
             <div class="relative z-10 container mx-auto">
-                <img src="https://placehold.co/150x150/1F2937/FBBF24?text=🎃👻🦇" alt="Icon of a jack-o-lantern, ghost, and bat" class="mx-auto mb-6 rounded-full border-4 border-amber-400 shadow-xl h-[150px] w-[150px] object-cover">
+                <div class="mx-auto mb-6 rounded-full border-4 border-amber-400 shadow-xl h-[150px] w-[150px] flex items-center justify-center bg-gray-900/50 backdrop-blur-sm">
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-amber-400 leading-tight gochi-hand">Lampton</p>
+                        <p class="text-2xl font-bold text-white leading-tight gochi-hand">Elementary</p>
+                    </div>
+                </div>
                 <h1 class="text-6xl md:text-8xl font-bold creepster tracking-wider uppercase"><span class="text-amber-400">Trunk</span> <span class="text-white text-4xl md:text-6xl">or</span> <span class="text-orange-400">Treat</span></h1>
                 <p class="text-lg md:text-xl mt-4 text-gray-300">Join the Lampton Elementary ghouls for a spooktacular night!</p>
 
@@ -107,13 +107,43 @@
                         <div class="text-6xl mb-4">🍬</div>
                         <h3 class="text-2xl font-bold text-white">Drop Candy in the Monster Mouths!</h3>
                         <p class="text-gray-400 mt-2">Find our Monster Mouth donation bins at <span class="font-semibold text-white">all school gates</span> during school hours.</p>
-                        <p class="mt-4 text-orange-400 font-bold">Donations accepted until Wednesday, October 29, 2025.</p>
+                        <p class="mt-4 text-orange-400 font-bold">Donations accepted until Thursday, October 30, 2025.</p>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- RSVP Section -->
+        <section id="rsvp" class="py-16 md:py-24 bg-gray-800 px-6">
+            <div class="container mx-auto max-w-lg">
+                <div id="rsvp-container">
+                    <h2 class="text-5xl font-bold text-center text-purple-400 mb-2">RSVP For The Event!</h2>
+                    <p class="text-center text-gray-400 mb-8">Please let us know if you're coming so we can get a headcount for candy!</p>
+                    <form id="rsvp-form" class="space-y-6" novalidate action="https://formsubmit.co/lamptonpta1@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Trunk-or-Treat RSVP!">
+                        <div>
+                            <label for="family-name" class="block text-sm font-medium text-gray-300">Family Name</label>
+                            <input type="text" id="family-name" name="family_name" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 p-3 text-white">
+                            <p id="family-name-error" class="error-message hidden">Please enter your family name.</p>
+                        </div>
+                        <div>
+                            <label for="children-count" class="block text-sm font-medium text-gray-300">Number of Children Attending</label>
+                            <input type="number" id="children-count" name="children_count" required min="1" class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 p-3 text-white">
+                            <p id="children-count-error" class="error-message hidden">Please enter a number of at least 1.</p>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                            We'll Be There!
+                        </button>
+                    </form>
+                </div>
+                <div id="rsvp-thank-you" class="hidden text-center bg-gray-700 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-3xl font-bold text-purple-400">Awesome!</h3>
+                    <p class="mt-4 text-gray-300">Thanks for the RSVP! We can't wait to see you and your little monsters!</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- Event Details Section - Animation class removed for immediate visibility -->
+        <!-- Event Details Section -->
         <section id="details" class="py-16 md:py-24 bg-gray-900 px-6">
             <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-5xl font-bold text-orange-500 mb-6 flex items-center justify-center gap-4">
@@ -141,15 +171,55 @@
                     </div>
                     <div class="activity-card bg-gray-800 p-6 rounded-lg border-2 border-dashed border-gray-700 hover:border-green-500 transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)]">
                          <div class="text-5xl mb-3">🎶</div>
-                        <h3 class="text-xl font-bold">Live Music</h3>
+                        <h3 class="text-xl font-bold">Halloween Music</h3>
                         <p class="text-gray-400 mt-2">Enjoy spooky tunes and a fun atmosphere with our DJ.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Spooky Fun Zone - Animation class removed for immediate visibility -->
-        <section id="funzone" class="py-16 md:py-24 bg-lime-900/50 px-6">
+        <!-- Sign-up Form Section -->
+        <section id="signup" class="py-16 md:py-24 bg-gray-800 px-6">
+            <div class="container mx-auto max-w-lg">
+                <div id="signup-container">
+                    <h2 class="text-5xl font-bold text-center text-orange-400 mb-2">Decorate Your Trunk!</h2>
+                    <p class="text-center text-gray-400 mb-8">Sign up to be a part of the fun. Space is limited!</p>
+                    <form id="signup-form" class="space-y-6" novalidate action="https://formsubmit.co/lamptonpta1@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Trunk-or-Treat Trunk Registration!">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
+                            <p id="name-error" class="error-message hidden">Please enter your name.</p>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
+                            <p id="email-error" class="error-message hidden">Please enter a valid email address.</p>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
+                            <p id="phone-error" class="error-message hidden">Please enter your phone number.</p>
+                        </div>
+                        <div>
+                            <label for="vehicle" class="block text-sm font-medium text-gray-300">Vehicle Description</label>
+                            <input type="text" id="vehicle" name="vehicle" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
+                            <p id="vehicle-error" class="error-message hidden">Please describe your vehicle.</p>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105">
+                            Reserve My Spooky Spot!
+                        </button>
+                    </form>
+                </div>
+                <div id="thank-you-message" class="hidden text-center bg-gray-700 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-3xl font-bold text-orange-400">Thank you!</h3>
+                    <p class="mt-4 text-gray-300">Your registration has been received. You will get an email with more details soon!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spooky Fun Zone -->
+        <section id="funzone" class="animated py-16 md:py-24 bg-lime-900/50 px-6">
              <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-5xl font-bold text-lime-400 mb-8">👻 Spooky Fun Zone! 👻</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
@@ -177,30 +247,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- Memories Gallery - Animation class removed for immediate visibility -->
-        <section id="memories" class="py-16 md:py-24 bg-gray-800 px-6">
-            <div class="container mx-auto max-w-5xl text-center">
-                <h2 class="text-5xl font-bold text-purple-400 mb-4">Flashback to Last Year's Frights!</h2>
-                <p class="text-gray-400 mb-10">Check out the amazing fun from our last Trunk-or-Treat!</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-700 rounded-lg p-3 shadow-xl transform hover:scale-105 rotate-2 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/F472B6/FFFFFF?text=Awesome+Costumes!" alt="Kids in creative Halloween costumes" class="w-full h-48 object-cover rounded">
-                        <p class="mt-2 font-gochi-hand text-xl">Awesome Costumes!</p>
-                    </div>
-                     <div class="bg-gray-700 rounded-lg p-3 shadow-xl transform hover:scale-105 -rotate-2 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/34D399/FFFFFF?text=Creative+Trunks!" alt="A car trunk decorated with a spooky theme" class="w-full h-48 object-cover rounded">
-                        <p class="mt-2 font-gochi-hand text-xl">So Many Creative Trunks!</p>
-                    </div>
-                     <div class="bg-gray-700 rounded-lg p-3 shadow-xl transform hover:scale-105 rotate-1 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=Family+Fun!" alt="Families smiling and enjoying the event" class="w-full h-48 object-cover rounded">
-                        <p class="mt-2 font-gochi-hand text-xl">Smiles and Family Fun!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         
-        <!-- Interactive Poll Section -->
+        <!-- Interactive Theme Suggestion -->
         <section id="vote" class="animated py-16 md:py-24 bg-gray-900 px-6">
             <div class="container mx-auto max-w-2xl text-center">
                 <h2 class="text-5xl font-bold text-orange-400 mb-4">Suggest Next Year's Theme!</h2>
@@ -225,11 +273,11 @@
             </div>
         </section>
 
-        <!-- Costume Contest Section -->
+        <!-- Best Trunk Contest Section -->
         <section id="contest" class="animated py-16 md:py-24 bg-gray-900 px-6">
             <div class="container mx-auto max-w-4xl text-center">
-                 <h2 class="text-5xl font-bold text-amber-400 mb-4">Costume & Trunk Contest!</h2>
-                <p class="text-gray-400 mb-10">Prizes for best costume AND best decorated trunk!</p>
+                 <h2 class="text-5xl font-bold text-amber-400 mb-4">Best Trunk Contest!</h2>
+                <p class="text-gray-400 mb-10">Prizes for the best decorated trunk!</p>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                     <div class="bg-gray-800 border-2 border-dashed border-purple-500 p-6 rounded-lg text-center shadow-lg transform -rotate-2">
                         <div class="text-purple-400 mb-3">
@@ -248,49 +296,9 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Sign-up Form Section -->
-        <section id="signup" class="animated py-16 md:py-24 bg-gray-800 px-6">
-            <div class="container mx-auto max-w-lg">
-                <div id="signup-container">
-                    <h2 class="text-5xl font-bold text-center text-orange-400 mb-2">Decorate Your Trunk!</h2>
-                    <p class="text-center text-gray-400 mb-8">Sign up to be a part of the fun. Space is limited!</p>
-                    <form id="signup-form" class="space-y-6" novalidate action="https://formsubmit.co/lamptonpta1@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Trunk-or-Treat Trunk Registration!">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
-                            <input type="text" id="name" name="name" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
-                            <p id="name-error" class="error-message hidden">Please enter your name.</p>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
-                            <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
-                            <p id="email-error" class="error-message hidden">Please enter a valid email address.</p>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-300">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
-                             <p id="phone-error" class="error-message hidden">Please enter your phone number.</p>
-                        </div>
-                        <div>
-                            <label for="vehicle" class="block text-sm font-medium text-gray-300">Vehicle Description</label>
-                            <input type="text" id="vehicle" name="vehicle" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 p-3 text-white">
-                             <p id="vehicle-error" class="error-message hidden">Please describe your vehicle.</p>
-                        </div>
-                        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105">
-                            Reserve My Spooky Spot!
-                        </button>
-                    </form>
-                </div>
-                <div id="thank-you-message" class="hidden text-center bg-gray-700 p-8 rounded-lg shadow-xl">
-                    <h3 class="text-3xl font-bold text-orange-400">Thank you!</h3>
-                    <p class="mt-4 text-gray-300">Your registration has been received. You will get an email with more details soon!</p>
-                </div>
-            </div>
-        </section>
 
         <!-- Volunteer Sign-up Section -->
-        <section id="volunteer" class="animated py-16 md:py-24 bg-gray-900 px-6">
+        <section id="volunteer" class="py-16 md:py-24 bg-gray-800 px-6">
             <div class="container mx-auto max-w-lg">
                 <div id="volunteer-container">
                     <h2 class="text-5xl font-bold text-center text-lime-400 mb-2">Join the Boo Crew!</h2>
@@ -310,7 +318,7 @@
                         <div>
                             <label for="volunteer-phone" class="block text-sm font-medium text-gray-300">Phone Number</label>
                             <input type="tel" id="volunteer-phone" name="volunteer_phone" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-lime-500 focus:border-lime-500 p-3 text-white">
-                             <p id="volunteer-phone-error" class="error-message hidden">Please enter your phone number.</p>
+                            <p id="volunteer-phone-error" class="error-message hidden">Please enter your phone number.</p>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-300">I can help with:</label>
@@ -323,16 +331,16 @@
                                     <input id="help-crafts" name="volunteer_area[]" type="checkbox" value="Arts & Crafts" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
                                     <label for="help-crafts" class="ml-3 text-gray-300">Arts & Crafts Table</label>
                                 </div>
-                                 <div class="flex items-center">
+                                <div class="flex items-center">
                                     <input id="help-cleanup" name="volunteer_area[]" type="checkbox" value="Clean Up" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
                                     <label for="help-cleanup" class="ml-3 text-gray-300">Event Clean Up</label>
                                 </div>
-                                 <div class="flex items-center">
+                                <div class="flex items-center">
                                     <input id="help-anything" name="volunteer_area[]" type="checkbox" value="Anything" class="h-4 w-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500">
                                     <label for="help-anything" class="ml-3 text-gray-300">Anything! I'm flexible!</label>
                                 </div>
                             </div>
-                             <p id="volunteer-area-error" class="error-message hidden">Please select at least one area to help.</p>
+                            <p id="volunteer-area-error" class="error-message hidden">Please select at least one area to help.</p>
                         </div>
                         <button type="submit" class="w-full bg-lime-600 hover:bg-lime-700 text-white font-bold py-3 px-4 rounded-lg text-lg transition-transform duration-200 ease-in-out hover:scale-105">
                             Count Me In!
@@ -345,9 +353,9 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Spooky & Safe Section -->
-        <section id="safety" class="animated py-16 md:py-24 bg-gray-800 px-6">
+        <section id="safety" class="animated py-16 md:py-24 bg-gray-900 px-6">
             <div class="container mx-auto max-w-3xl">
                 <h2 class="text-5xl font-bold text-center text-lime-400 mb-10 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm-1-7a1 1 0 00-1 1v3a1 1 0 002 0V9a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
@@ -368,12 +376,8 @@
                 <h2 class="text-5xl font-bold text-center text-orange-400 mb-10">Frequently Asked Questions</h2>
                 <div class="space-y-8">
                     <div class="faq-item bg-gray-700 p-5 rounded-lg">
-                        <h3 class="font-bold text-lg text-white">What happens if it rains?</h3>
-                        <p class="mt-2 text-gray-300">This event is rain or shine! In case of heavy rain, we will move into the school's multi-purpose room. We'll keep you updated via email!</p>
-                    </div>
-                    <div class="faq-item bg-gray-700 p-5 rounded-lg">
-                        <h3 class="font-bold text-lg text-white">How do I enter the contests?</h3>
-                        <p class="mt-2 text-gray-300">Entry is automatic! Our secret judges will be roaming the event. Winners will be announced at 5:30 PM on the main stage.</p>
+                        <h3 class="font-bold text-lg text-white">How do I enter the Best Trunk contest?</h3>
+                        <p class="mt-2 text-gray-300">Entry is automatic for all registered trunks! Our secret judges will be roaming the event. Winners will be announced at 5:30 PM on the main stage.</p>
                     </div>
                     <div class="faq-item bg-gray-700 p-5 rounded-lg">
                         <h3 class="font-bold text-lg text-white">What time should trunk participants arrive?</h3>
@@ -390,7 +394,7 @@
                 <p class="text-gray-300 mb-6">We'd love to hear from you!</p>
                 <div class="inline-block bg-gray-800 p-6 rounded-lg border border-gray-700">
                     <p class="text-lg">Email: <a href="mailto:lamptonpta1@gmail.com" class="text-orange-400 hover:underline">lamptonpta1@gmail.com</a></p>
-                    <p class="text-lg mt-2">Phone: <a href="tel:562-555-5267" class="text-orange-400 hover:underline">(562) 555-5267</a></p>
+                    <p class="text-lg mt-2">Phone: <a href="tel:562-210-3255" class="text-orange-400 hover:underline">(562) 210-3255</a></p>
                     <p class="text-lg mt-2">Instagram: <a href="https://www.instagram.com/lamptonpta" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">@lamptonpta</a></p>
                 </div>
             </div>
@@ -403,11 +407,11 @@
                 <p class="text-gray-300 mb-8">Help us get the word out! Share this page with other Lampton families.</p>
                 <div class="flex justify-center items-center gap-4">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_EVENT_URL_HERE" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 flex items-center gap-2">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h--3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>
                         Share on Facebook
                     </a>
                     <a href="https://www.instagram.com/lamptonpta" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 flex items-center gap-2">
-                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
+                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664 4.771 4.919 4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
                         Follow on Instagram
                     </a>
                 </div>
@@ -417,7 +421,7 @@
 
     <footer class="bg-gray-800 border-t border-gray-700 text-center py-6 px-4">
         <p class="text-gray-400">&copy; 2025 Lampton Elementary School. All Rights Reserved.</p>
-        <p class="text-gray-500 text-sm mt-4">Designed and Created by Scanista AI. If you want one made for you contact me <a href="mailto:brittany@scanistaqr.com" class="text-orange-400 hover:underline">brittany@scanistaqr.com</a></p>
+        <p class="text-gray-500 text-sm mt-4">Designed and Created by Scanista AI. If you want one made for you contact <a href="mailto:brittany@scanistaqr.com" class="text-orange-400 hover:underline">brittany@scanistaqr.com</a></p>
     </footer>
 
     <script>
@@ -569,6 +573,27 @@
                         setTimeout(() => {
                             document.getElementById('volunteer-container').classList.add('hidden');
                             document.getElementById('volunteer-thank-you').classList.remove('hidden');
+                        }, 100);
+                    }
+                });
+            }
+            
+            // RSVP Form Logic
+            const rsvpForm = document.getElementById('rsvp-form');
+            if (rsvpForm) {
+                const familyName = document.getElementById('family-name');
+                const childrenCount = document.getElementById('children-count');
+
+                rsvpForm.addEventListener('submit', (e) => {
+                    const isNameValid = validateField(familyName, 'family-name-error', val => val.trim() !== '');
+                    const isCountValid = validateField(childrenCount, 'children-count-error', val => val.trim() !== '' && parseInt(val) >= 1);
+
+                    if (!isNameValid || !isCountValid) {
+                        e.preventDefault();
+                    } else {
+                        setTimeout(() => {
+                           document.getElementById('rsvp-container').classList.add('hidden');
+                           document.getElementById('rsvp-thank-you').classList.remove('hidden');
                         }, 100);
                     }
                 });
