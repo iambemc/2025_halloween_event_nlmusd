@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Inter:wght@400;600;700&family=Creepster&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎃</text></svg>">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -28,7 +27,7 @@
         .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
         .animated { opacity: 0; }
         .hero-bg {
-            background-image: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 25%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="100" fill="rgba(255,255,255,0.05)">👻</text></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" fill="rgba(255,255,255,0.05)">🎃</text></svg>');
+            background-image: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 25%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80" fill="rgba(255,255,255,0.05)">👻</text></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="60" fill="rgba(255,255,255,0.05)">🎃</text></svg>');
             background-repeat: no-repeat;
             background-position: 50% 20%, 10% 50%, 90% 60%;
         }
@@ -516,65 +515,6 @@
                 });
             }, { threshold: 0.1 });
             animatedEls.forEach(el => observer.observe(el));
-
-            // Sound Effects Logic
-            let audioInitialized = false;
-
-            function initAudio() {
-                if (audioInitialized || Tone.context.state === 'running') return;
-                
-                Tone.start().then(() => {
-                    console.log('Audio context started');
-                    audioInitialized = true;
-                }).catch(e => {
-                    console.error("Could not start audio context", e);
-                });
-            }
-            
-            // Initialize audio on the first user interaction
-            document.body.addEventListener('click', initAudio, { once: true });
-            document.body.addEventListener('touchstart', initAudio, { once: true });
-
-
-            // Create synths for different sounds ahead of time
-            const chompSynth = new Tone.Synth({ oscillator: { type: 'square' }, envelope: { attack: 0.01, decay: 0.1, sustain: 0.2, release: 0.1 } }).toDestination();
-            const vibrato = new Tone.Vibrato(8, 0.4).toDestination();
-            const ghostSynth = new Tone.FMSynth({
-                harmonicity: 2,
-                modulationIndex: 10,
-                envelope: { attack: 0.1, decay: 0.5, sustain: 0.1, release: 1 },
-                modulationEnvelope: { attack: 0.1, decay: 0.5, sustain: 0.1, release: 1 }
-            }).connect(vibrato);
-            const bubbleSynth = new Tone.MembraneSynth({ pitchDecay: 0.008, octaves: 2, envelope: { attack: 0.0006, decay: 0.5, sustain: 0 } }).toDestination();
-            const chimeSynth = new Tone.MetalSynth({ frequency: 250, envelope: { attack: 0.001, decay: 0.4, release: 0.2 }, harmonicity: 5.1, modulationIndex: 32, resonance: 4000, octaves: 1.5 }).toDestination();
-            const booSynth = new Tone.Synth({ oscillator: { type: 'sawtooth' }, envelope: { attack: 0.05, decay: 0.2, sustain: 0, release: 0.1 } }).toDestination();
-
-            const sounds = {
-                chomp: () => {
-                    chompSynth.triggerAttackRelease('C2', '8n');
-                    setTimeout(() => chompSynth.triggerAttackRelease('C2', '8n'), 150);
-                },
-                ghost: () => { ghostSynth.triggerAttackRelease('A5', '1n'); },
-                bubble: () => {
-                    bubbleSynth.triggerAttackRelease('C2', '8n', Tone.now());
-                    bubbleSynth.triggerAttackRelease('G2', '8n', Tone.now() + 0.1);
-                    bubbleSynth.triggerAttackRelease('E2', '8n', Tone.now() + 0.2);
-                },
-                chime: () => { chimeSynth.triggerAttackRelease('C5', '8n'); },
-                boo: () => { booSynth.triggerAttackRelease('G3', '4n'); }
-            };
-            
-            const soundIcons = document.querySelectorAll('.sound-icon');
-            soundIcons.forEach(icon => {
-                icon.addEventListener('mouseenter', () => {
-                    if (audioInitialized && Tone.context.state === 'running') {
-                        const sound = icon.dataset.sound;
-                        if (sounds[sound]) {
-                            sounds[sound]();
-                        }
-                    }
-                });
-            });
         });
     </script>
 </body>
