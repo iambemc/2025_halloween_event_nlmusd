@@ -37,17 +37,6 @@
         .faq-item:nth-child(odd) { transform: rotate(-1.5deg); }
         .faq-item:nth-child(even) { transform: rotate(1.5deg); }
         .activity-card:hover { transform: translateY(-10px); }
-        .sound-icon {
-            cursor: pointer;
-            display: inline-block;
-            transition: transform 0.2s;
-            margin-right: 12px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-        .sound-icon:hover {
-            transform: scale(1.3);
-        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -102,24 +91,6 @@
             </div>
         </section>
 
-        <!-- Candy Donation Section -->
-        <section id="donate" class="py-16 md:py-24 bg-orange-900/20 px-6">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-5xl font-bold creepster text-orange-400 mb-4 flex justify-center items-center"><span class="sound-icon" data-sound="chomp">🍬</span>Feed the Monsters!</h2>
-                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
-                    We need your help collecting bags of individually wrapped candy. Dropping off donations is part of the fun!
-                </p>
-                <div class="mt-8 flex justify-center">
-                    <div class="bg-slate-800 shadow-lg p-8 rounded-lg border-2 border-dashed border-slate-700 hover:border-orange-500 transition-all duration-300 text-center">
-                        <div class="text-6xl mb-4">🍬</div>
-                        <h3 class="text-2xl font-bold text-white">Drop Candy in the Monster Mouths!</h3>
-                        <p class="text-slate-400 mt-2">Find our Monster Mouth donation bins at <span class="font-semibold text-white">all school gates</span> during school hours.</p>
-                        <p class="mt-4 text-orange-500 font-bold">Donations accepted until Monday, October 27, 2025.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- RSVP Section -->
         <section id="rsvp" class="py-16 md:py-24 bg-purple-900/20 px-6">
             <div class="container mx-auto max-w-lg">
@@ -150,10 +121,28 @@
             </div>
         </section>
 
+        <!-- Candy Donation Section -->
+        <section id="donate" class="py-16 md:py-24 bg-orange-900/20 px-6">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-5xl font-bold creepster text-orange-400 mb-4">Feed the Monsters!</h2>
+                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+                    We need your help collecting bags of individually wrapped candy. Dropping off donations is part of the fun!
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-slate-800 shadow-lg p-8 rounded-lg border-2 border-dashed border-slate-700 hover:border-orange-500 transition-all duration-300 text-center">
+                        <div class="text-6xl mb-4">🍬</div>
+                        <h3 class="text-2xl font-bold text-white">Drop Candy in the Monster Mouths!</h3>
+                        <p class="text-slate-400 mt-2">Find our Monster Mouth donation bins at <span class="font-semibold text-white">all school gates</span> during school hours.</p>
+                        <p class="mt-4 text-orange-500 font-bold">Donations accepted until Monday, October 27, 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Spooky Fun Zone -->
         <section id="funzone" class="py-16 md:py-24 bg-lime-900/20 px-6">
              <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-5xl font-bold text-lime-400 mb-8 flex justify-center items-center"><span class="sound-icon" data-sound="ghost">👻</span> Spooky Fun Zone! <span class="sound-icon" data-sound="ghost">👻</span></h2>
+                <h2 class="text-5xl font-bold text-lime-400 mb-8">👻 Spooky Fun Zone! 👻</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                     <div class="bg-slate-800 shadow-lg p-6 rounded-lg border-2 border-dashed border-lime-500 flex flex-col justify-between">
                         <div>
@@ -183,8 +172,7 @@
         <!-- Event Details Section -->
         <section id="details" class="py-16 md:py-24 bg-slate-900 px-6">
             <div class="container mx-auto max-w-5xl text-center">
-                <h2 class="text-5xl font-bold text-orange-500 mb-6 flex items-center justify-center gap-4">
-                    <span class="sound-icon" data-sound="bubble">🧙</span>
+                <h2 class="text-5xl font-bold text-orange-500 mb-6">
                     Get Ready for Ghoulish Games & Goodies!
                 </h2>
                 <p class="text-slate-300 leading-relaxed mb-12">
@@ -313,7 +301,7 @@
         <!-- Vote for Best Trunk Section -->
         <section id="vote" class="animated py-16 md:py-24 bg-purple-900/20 px-6">
             <div class="container mx-auto max-w-3xl text-center">
-                <h2 class="text-5xl font-bold text-purple-400 mb-4 flex justify-center items-center"><span class="sound-icon" data-sound="chime">✨</span>Cast Your Spooky Vote!</h2>
+                <h2 class="text-5xl font-bold text-purple-400 mb-4">Cast Your Spooky Vote!</h2>
                 <p class="text-slate-300 mb-8 max-w-xl mx-auto">Who has the best trunk of them all? You decide! Voting happens <strong class="text-white">onsite during the event.</strong> Every decorated trunk will have a special QR code. Find your favorite trunk, scan the code with your phone, and cast your vote!</p>
                 <div class="inline-block bg-slate-800 border-2 border-dashed border-purple-500 p-6 rounded-lg shadow-lg">
                     <h3 class="text-3xl font-bold text-purple-400">Judging Ends at 5:30 PM</h3>
@@ -325,8 +313,7 @@
         <!-- Spooky & Safe Section -->
         <section id="safety" class="animated py-16 md:py-24 bg-slate-900 px-6">
             <div class="container mx-auto max-w-3xl">
-                <h2 class="text-5xl font-bold text-center text-lime-400 mb-10 flex justify-center items-center gap-4">
-                    <span class="sound-icon" data-sound="boo">🛡️</span>
+                <h2 class="text-5xl font-bold text-center text-lime-400 mb-10">
                     Spooky & Safe Rules for Ghouls!
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
@@ -539,53 +526,55 @@
                 Tone.start().then(() => {
                     console.log('Audio context started');
                     audioInitialized = true;
-
-                    // Create synths for different sounds
-                    const chompSynth = new Tone.Synth({ oscillator: { type: 'square' }, envelope: { attack: 0.01, decay: 0.1, sustain: 0.2, release: 0.1 } }).toDestination();
-                    const vibrato = new Tone.Vibrato(8, 0.4).toDestination();
-                    const ghostSynth = new Tone.FMSynth({
-                        harmonicity: 2,
-                        modulationIndex: 10,
-                        envelope: { attack: 0.1, decay: 0.5, sustain: 0.1, release: 1 },
-                        modulationEnvelope: { attack: 0.1, decay: 0.5, sustain: 0.1, release: 1 }
-                    }).connect(vibrato);
-                    const bubbleSynth = new Tone.MembraneSynth({ pitchDecay: 0.008, octaves: 2, envelope: { attack: 0.0006, decay: 0.5, sustain: 0 } }).toDestination();
-                    const chimeSynth = new Tone.MetalSynth({ frequency: 250, envelope: { attack: 0.001, decay: 0.4, release: 0.2 }, harmonicity: 5.1, modulationIndex: 32, resonance: 4000, octaves: 1.5 }).toDestination();
-                    const booSynth = new Tone.Synth({ oscillator: { type: 'sawtooth' }, envelope: { attack: 0.05, decay: 0.2, sustain: 0, release: 0.1 } }).toDestination();
-
-                    const sounds = {
-                        chomp: () => {
-                            chompSynth.triggerAttackRelease('C2', '8n');
-                            setTimeout(() => chompSynth.triggerAttackRelease('C2', '8n'), 150);
-                        },
-                        ghost: () => { ghostSynth.triggerAttackRelease('A5', '1n'); },
-                        bubble: () => {
-                            bubbleSynth.triggerAttackRelease('C2', '8n', Tone.now());
-                            bubbleSynth.triggerAttackRelease('G2', '8n', Tone.now() + 0.1);
-                            bubbleSynth.triggerAttackRelease('E2', '8n', Tone.now() + 0.2);
-                        },
-                        chime: () => { chimeSynth.triggerAttackRelease('C5', '8n'); },
-                        boo: () => { booSynth.triggerAttackRelease('G3', '4n'); }
-                    };
-                    
-                    const soundIcons = document.querySelectorAll('.sound-icon');
-                    soundIcons.forEach(icon => {
-                        icon.addEventListener('mouseenter', () => {
-                            const sound = icon.dataset.sound;
-                            if (sounds[sound]) {
-                                sounds[sound]();
-                            }
-                        });
-                    });
-
                 }).catch(e => {
                     console.error("Could not start audio context", e);
                 });
             }
-
-            // Browsers require a user interaction to start audio.
+            
+            // Initialize audio on the first user interaction
             document.body.addEventListener('click', initAudio, { once: true });
             document.body.addEventListener('touchstart', initAudio, { once: true });
+
+
+            // Create synths for different sounds ahead of time
+            const chompSynth = new Tone.Synth({ oscillator: { type: 'square' }, envelope: { attack: 0.01, decay: 0.1, sustain: 0.2, release: 0.1 } }).toDestination();
+            const vibrato = new Tone.Vibrato(8, 0.4).toDestination();
+            const ghostSynth = new Tone.FMSynth({
+                harmonicity: 2,
+                modulationIndex: 10,
+                envelope: { attack: 0.1, decay: 0.5, sustain: 0.1, release: 1 },
+                modulationEnvelope: { attack: 0.1, decay: 0.5, sustain: 0.1, release: 1 }
+            }).connect(vibrato);
+            const bubbleSynth = new Tone.MembraneSynth({ pitchDecay: 0.008, octaves: 2, envelope: { attack: 0.0006, decay: 0.5, sustain: 0 } }).toDestination();
+            const chimeSynth = new Tone.MetalSynth({ frequency: 250, envelope: { attack: 0.001, decay: 0.4, release: 0.2 }, harmonicity: 5.1, modulationIndex: 32, resonance: 4000, octaves: 1.5 }).toDestination();
+            const booSynth = new Tone.Synth({ oscillator: { type: 'sawtooth' }, envelope: { attack: 0.05, decay: 0.2, sustain: 0, release: 0.1 } }).toDestination();
+
+            const sounds = {
+                chomp: () => {
+                    chompSynth.triggerAttackRelease('C2', '8n');
+                    setTimeout(() => chompSynth.triggerAttackRelease('C2', '8n'), 150);
+                },
+                ghost: () => { ghostSynth.triggerAttackRelease('A5', '1n'); },
+                bubble: () => {
+                    bubbleSynth.triggerAttackRelease('C2', '8n', Tone.now());
+                    bubbleSynth.triggerAttackRelease('G2', '8n', Tone.now() + 0.1);
+                    bubbleSynth.triggerAttackRelease('E2', '8n', Tone.now() + 0.2);
+                },
+                chime: () => { chimeSynth.triggerAttackRelease('C5', '8n'); },
+                boo: () => { booSynth.triggerAttackRelease('G3', '4n'); }
+            };
+            
+            const soundIcons = document.querySelectorAll('.sound-icon');
+            soundIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    if (audioInitialized && Tone.context.state === 'running') {
+                        const sound = icon.dataset.sound;
+                        if (sounds[sound]) {
+                            sounds[sound]();
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
